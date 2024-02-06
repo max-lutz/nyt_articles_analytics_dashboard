@@ -11,6 +11,12 @@ ETL pipeline on the New York Times data with apache superset for data visualizat
 https://developer.nytimes.com/docs/archive-product/1/overview
 
 ## Solution
+
+API --> mage --> GCP data lake --> BigQuery --> dbt --> Bigquery --> Looker studio.
+
+Terraform
+
+
 Tools and infrastructure
 Data pipeline
 Orchestration
