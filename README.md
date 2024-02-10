@@ -34,6 +34,11 @@ Instructions / project overview:
 - connect to the vm instance
 - pull the project repo
 - run docker compose to run the pipelines/project:
+    - shell script to setup gcp
+      - authorize APIs
+      - set the region and zone
+      - save the project name, region and zone as environement variables
+      - create service account for terraform and download it 
 	- terraform to create the required infrastructure in GCP
 		- data lake bucket
 		- data warehouse with the proper datasets: staging, production
