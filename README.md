@@ -31,6 +31,7 @@ Instructions / project overview:
 	- create a vm instance
 	
 	
+- add port extension in visual studio code
 - connect to the vm instance
 - pull the project repo
 - run docker compose to run the pipelines/project:
@@ -54,6 +55,9 @@ Instructions / project overview:
 CI/CD:
 - implement CI/CD as if this project was always in production and we used CI/CD to add features to it.
 
+Links for instruction:
+- Install terraform https://developer.hashicorp.com/terraform/install
+- 
 
 
 ## Results
