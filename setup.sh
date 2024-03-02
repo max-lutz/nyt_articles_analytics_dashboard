@@ -12,6 +12,11 @@ sudo apt-get install docker.io
 sudo curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+
+export GOOGLE_APPLICATION_CREDENTIALS=~/.gc/nyt_project.json
+gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+
+
 # check that everything is installed
 terraform --version
 docker --version
