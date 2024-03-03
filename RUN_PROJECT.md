@@ -44,3 +44,15 @@
    ```bash
    ~/nyt_articles_analytics_dashboard/setup.sh
    ```
+
+## Run project
+
+1. 
+
+
+
+1. [optional] Run development environment
+```
+docker build -f Dockerfile.dev --tag 'dev' .
+docker run -it -v .:/nyt_pipeline dev
+```
