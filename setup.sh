@@ -1,4 +1,4 @@
-# setup file
+#!/bin/bash
 
 #install terraform
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -15,6 +15,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 export GOOGLE_APPLICATION_CREDENTIALS=~/.gc/nyt_project.json
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 
 # check that everything is installed
