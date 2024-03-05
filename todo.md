@@ -1,0 +1,1 @@
+access mage ai dashboard when running docker-compose up

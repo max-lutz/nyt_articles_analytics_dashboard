@@ -8,8 +8,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      USER_CODE_PATH: /home/src/${PROJECT_NAME}
     ports:
       - 6789:6789
     volumes:
       - .:/home/src/
+      - ~/.gc/nyt_project.json:/home/src/personal-gcp.json
     restart: on-failure:5
