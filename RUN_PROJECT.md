@@ -47,5 +47,23 @@
 
 ## Run project
 
-1.  ```docker-compose up```
+1. Setup infrastructure:
+```
+cd ~/nyt_articles_analytcis_dashboard/terraform
+
+terraform init 
+
+# change name of project and bucket.
+terraform plan -var="project=nyt-data-analytics" -var="gcs_bucket_name=nyt_data_analytics_bucket"
+
+# change name of project and bucket.
+terraform apply -var="project=nyt-data-analytics" -var="gcs_bucket_name=nyt_data_analytics_bucket"
+
+```
+
+1.  Run mage
+```
+cd ~/nyt_articles_analytcis_dashboard
+docker-compose up
+```
 
