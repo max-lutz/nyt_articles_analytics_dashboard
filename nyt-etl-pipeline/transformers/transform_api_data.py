@@ -1,3 +1,5 @@
+import pandas as pd
+
 if 'transformer' not in globals():
     from mage_ai.data_preparation.decorators import transformer
 if 'test' not in globals():
@@ -19,8 +21,6 @@ def transform(data, *args, **kwargs):
     Returns:
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
     """
-
-    data = data.iloc[0:10, :]
     
     # remove columns
     columns_to_keep = ['_id', 'source', 'headline', 'keywords', 'pub_date', 'document_type',
@@ -39,6 +39,11 @@ def transform(data, *args, **kwargs):
     columns_to_keep = ['_id', 'source', 'headline', 'keywords', 'pub_date', 'document_type',
                         'news_desk', 'section_name', 'author', 'word_count']
     data = data[columns_to_keep]
+
+    # convert date column to correct
+    data['pub_date'] = pd.to_datetime(data['pub_date']).dt.date
+
+    print(data.info())
 
     return data
 
