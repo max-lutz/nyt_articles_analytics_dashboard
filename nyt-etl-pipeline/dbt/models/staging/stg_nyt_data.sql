@@ -25,7 +25,7 @@ select
     news_desk, 
     section_name
 
-from tripdata
+from nyt_data
 
 
 -- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
