@@ -11,7 +11,7 @@ with nyt_data as
 )
 select
     -- identifiers
-    {{ dbt_utils.generate_surrogate_key(['_id']) }} as article_id,
+    _id as article_id,
     
     -- timestamps
     cast(pub_date as timestamp) as published_date,
@@ -23,7 +23,9 @@ select
     headline,
     document_type, 
     news_desk, 
-    section_name
+    section_name,
+    keywords,
+    author as authors
 
 from nyt_data
 

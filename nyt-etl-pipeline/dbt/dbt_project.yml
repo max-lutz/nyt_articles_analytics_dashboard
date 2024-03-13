@@ -42,4 +42,5 @@ models:
           schema: staging
           materialized: view
     core:
-        materialized: table
+          schema: production
+          materialized: table

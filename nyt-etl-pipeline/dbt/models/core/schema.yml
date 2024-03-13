@@ -1,0 +1,6 @@
+version: 2
+
+models:
+    - name: fact_nyt_articles
+    - name: dim_nyt_keywords
+    - name: dim_nyt_authors
