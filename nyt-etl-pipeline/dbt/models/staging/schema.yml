@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: staging
+    database: nyt-data-analytics
+    schema: nyt_data
+
+    tables:
+      - name: nyt_data_raw
+
+
+models:
+    - name: stg_nyt_data
