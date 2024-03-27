@@ -1,5 +1,4 @@
 # Todo
-- Create staging and production datasets in bigquery using terraform
 - add more tests on the data in ETL pipeline and dbt
 - add trigger on ETL pipeline
     - loop through all the possible years and months
