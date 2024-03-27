@@ -12,6 +12,8 @@ https://developer.nytimes.com/docs/archive-product/1/overview
 
 ## Solution
 
+![diagram](./diagrams/infrastructure.png "Diagram")
+
 API --> mage --> GCP data lake --> BigQuery --> dbt --> Bigquery --> Looker studio.
 
 Terraform
