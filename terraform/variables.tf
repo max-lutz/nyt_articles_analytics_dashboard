@@ -20,10 +20,22 @@ variable "location" {
   default = "EU"
 }
 
-variable "bq_dataset_name" {
-  description = "My BigQuery Dataset Name"
+variable "bq_dataset_raw_name" {
+  description = "raw dataset"
   #Update the below to what you want your dataset to be called
   default = "nyt_data"
+}
+
+variable "bq_dataset_staging_name" {
+  description = "staging dataset"
+  #Update the below to what you want your dataset to be called
+  default = "staging"
+}
+
+variable "bq_dataset_production_name" {
+  description = "production dataset"
+  #Update the below to what you want your dataset to be called
+  default = "production"
 }
 
 variable "gcs_bucket_name" {
