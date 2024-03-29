@@ -23,8 +23,6 @@ def transform(data, *args, **kwargs):
     """
     
     # remove columns
-    columns_to_keep = ['_id', 'source', 'headline', 'keywords', 'pub_date', 'document_type',
-                        'news_desk', 'section_name', 'byline', 'word_count']
     data = data[columns_to_keep]
 
     # extract nested data
@@ -54,3 +52,10 @@ def test_output(output, *args) -> None:
     Template code for testing the output of the block.
     """
     assert output is not None, 'The output is undefined'
+
+@test
+def test_column_number(output, *args) -> None:
+    """
+    Template code for testing the output of the block.
+    """
+    assert len(output.columns) == 10, 'The number of transformed columns is incorrect'

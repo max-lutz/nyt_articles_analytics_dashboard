@@ -7,6 +7,9 @@ if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 from mage_ai.data_preparation.shared.secrets import get_secret_value
 
+columns_to_keep = ['_id', 'source', 'headline', 'keywords', 'pub_date', 'document_type',
+                        'news_desk', 'section_name', 'byline', 'word_count']
+
 
 @data_loader
 def load_data_from_api(*args, **kwargs):
@@ -16,7 +19,7 @@ def load_data_from_api(*args, **kwargs):
 
     parameters = {'api-key': get_secret_value('nyt_key')}
 
-    url = "https://api.nytimes.com/svc/archive/v1/2019/1.json"
+    url = f"https://api.nytimes.com/svc/archive/v1/1851/1.json"
     response = requests.get(url, params=parameters)
 
     json = response.json()
@@ -30,3 +33,10 @@ def test_output(output, *args) -> None:
     Template code for testing the output of the block.
     """
     assert output is not None, 'The output is undefined'
+
+@test
+def test_column_number(output, *args) -> None:
+    """
+    Template code for testing the output of the block.
+    """
+    assert all(col in  output.columns for col in columns_to_keep), 'Missing important columns'
