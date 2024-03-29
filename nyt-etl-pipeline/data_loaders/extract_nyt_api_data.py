@@ -19,7 +19,11 @@ def load_data_from_api(*args, **kwargs):
 
     parameters = {'api-key': get_secret_value('nyt_key')}
 
-    url = f"https://api.nytimes.com/svc/archive/v1/1851/1.json"
+    now_datetime = pd.to_datetime(kwargs['execution_date'])
+    year = now_datetime.year
+    month = now_datetime.month
+
+    url = f"https://api.nytimes.com/svc/archive/v1/{year}/{month}.json"
     response = requests.get(url, params=parameters)
 
     json = response.json()
