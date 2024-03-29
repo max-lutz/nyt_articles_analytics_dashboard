@@ -36,7 +36,8 @@ blocks:
 - all_upstream_blocks_executed: false
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - run_dbt_modeling
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -67,6 +68,31 @@ blocks:
   upstream_blocks:
   - transform_api_data
   uuid: transformed_data_to_gcs_partitioned
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dbt:
+      command: run
+    dbt_profile_target: ''
+    dbt_project_name: dbt
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/run_dbt_modeling.yaml
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: run_dbt_modeling
+  retry_config: null
+  status: failed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - transformed_data_to_bigquery
+  uuid: run_dbt_modeling
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
