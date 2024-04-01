@@ -5,7 +5,6 @@ if 'transformer' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
-
 @transformer
 def transform(data, *args, **kwargs):
     """
@@ -22,6 +21,10 @@ def transform(data, *args, **kwargs):
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
     """
     
+    columns_to_keep = ['_id', 'source', 'headline', 'keywords', 'pub_date', 'document_type',
+                        'news_desk', 'section_name', 'byline', 'word_count']
+
+                        
     # remove columns
     data = data[columns_to_keep]
 
