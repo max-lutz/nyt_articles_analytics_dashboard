@@ -1,1 +1,1 @@
---vars '{'is_test_run': 'false'}'
+--vars '{"is_test_run": false}'
