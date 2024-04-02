@@ -1,0 +1,17 @@
+# Top-level configs that apply to all profiles are set here
+config:
+    send_anonymous_usage_stats: True
+    use_colors: True
+
+# BigQuery
+# -------------------
+default:
+    outputs:
+      prod:
+        type: bigquery
+        method: service-account
+        project: nyt-data-analytics
+        schema: core
+        threads: 1
+        keyfile: ../../personal-gcp.json
+    target: prod

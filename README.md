@@ -1,10 +1,9 @@
 # New York Times articles dashboard
-ETL pipeline on the New York Times data with apache superset for data visualization
-
-
-## Problem
+ETL pipeline on the New York Times data with Looker for data visualization
 
 ## Motivation
+I've always been interested in reading the news and it can be hard to get data analysis on news article produced.
+I choose the New York Times because you could access their data easily through an API.
 
 ## Data source
 
@@ -12,63 +11,30 @@ https://developer.nytimes.com/docs/archive-product/1/overview
 
 ## Solution
 
+- Tools and infrastructure
+- Data Lake: Google cloud storage
+- Data warehouse: BigQuery
+- Data pipeline: Python in Mage AI
+- Analytics engineering: dbt
+- Orchestration: Mage AI (triggrer and backfill for historical data)
+- Data visualization: Looker
+
+
+
 ![diagram](./diagrams/infrastructure.png "Diagram")
-
-API --> mage --> GCP data lake --> BigQuery --> dbt --> Bigquery --> Looker studio.
-
-Terraform
-
-
-Tools and infrastructure
-Data pipeline
-Orchestration
-...
-
-
-
-Instructions / project overview:
-
-- create gcp account
-	- create new project
-	- create a vm instance
-	
-	
-- add port extension in visual studio code
-- connect to the vm instance
-- pull the project repo
-- run docker compose to run the pipelines/project:
-    - shell script to setup gcp
-      - authorize APIs
-      - set the region and zone
-      - save the project name, region and zone as environement variables
-      - create service account for terraform and download it 
-	- terraform to create the required infrastructure in GCP
-		- data lake bucket
-		- data warehouse with the proper datasets: staging, production
-		- IAM for looker
-		- IAM for mage ai pipelines (read/write on data lake, read/write on data warehouse, create datasets on data warehouse...)
-	- mage ai to run the pipelines (for each pipelines, run tests in data quality).
-		- one ETL pipeline to load into the data lake (API -> transform -> data lake)
-		- one ETL pipeline to load into the data warehouse (data lake -> transform -> data warehouse)
-		- one dbt pipeline to create the data model in the warehouse (staging --> serving)
-	- looker studio... to display the dashboard.
 	
 	
 CI/CD:
 - implement CI/CD as if this project was always in production and we used CI/CD to add features to it.
 
-Links for instruction:
-- Install terraform https://developer.hashicorp.com/terraform/install
-- 
 
 
 ## Results
-Dashboard
+[Dashboard](https://lookerstudio.google.com/reporting/46e544c3-9e40-49d3-9da5-e9075f72631c)
 
 ## Inspiration
 https://github.com/LoHertel/diplomats-in-germany/tree/main
 
 
 ## Instructions:
-- run `docker compose up`
-- 
+Go check the instructions [here](./RUN_PROJECT.md)

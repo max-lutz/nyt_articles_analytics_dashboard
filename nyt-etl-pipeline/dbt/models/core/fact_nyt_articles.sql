@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='incremental') }}
 
 with fact_nyt_articles as (
     select article_id,
