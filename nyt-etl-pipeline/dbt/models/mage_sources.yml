@@ -1,0 +1,14 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_dbt
+  schema: core
+  tables:
+  - description: Dataframe for block `transformed_data_to_bigquery` of the `nyt_api_to_gcs_and_bigquery`
+      mage pipeline.
+    identifier: mage_nyt_api_to_gcs_and_bigquery_transformed_data_to_bigquery
+    meta:
+      block_uuid: transformed_data_to_bigquery
+      pipeline_uuid: nyt_api_to_gcs_and_bigquery
+    name: nyt_api_to_gcs_and_bigquery_transformed_data_to_bigquery
+version: 2
