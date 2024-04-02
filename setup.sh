@@ -13,7 +13,7 @@ sudo curl -L https://github.com/docker/compose/releases/download/v2.24.6/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 
-export GOOGLE_APPLICATION_CREDENTIALS=~/.gc/nyt_project.json
+export GOOGLE_APPLICATION_CREDENTIALS=~/nyt_project.json
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 sudo groupadd docker

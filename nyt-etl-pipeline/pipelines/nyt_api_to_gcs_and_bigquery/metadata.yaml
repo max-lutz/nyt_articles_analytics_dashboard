@@ -10,12 +10,12 @@ blocks:
   language: python
   name: extract_nyt_api_data
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: extract_nyt_api_data
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
@@ -27,13 +27,13 @@ blocks:
   language: python
   name: transform_api_data
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: transformer
   upstream_blocks:
   - extract_nyt_api_data
   uuid: transform_api_data
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
@@ -50,7 +50,7 @@ blocks:
   upstream_blocks:
   - transform_api_data
   uuid: transformed_data_to_bigquery
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     file_source:
@@ -62,18 +62,18 @@ blocks:
   language: python
   name: transformed_data_to_gcs_partitioned
   retry_config: null
-  status: not_executed
+  status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
   - transform_api_data
   uuid: transformed_data_to_gcs_partitioned
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     dbt:
       command: run
-    dbt_profile_target: ''
+    dbt_profile_target: prod
     dbt_project_name: dbt
     disable_query_preprocessing: false
     export_write_policy: append
@@ -87,7 +87,7 @@ blocks:
   language: yaml
   name: run_dbt_modeling
   retry_config: null
-  status: failed
+  status: executed
   timeout: null
   type: dbt
   upstream_blocks:

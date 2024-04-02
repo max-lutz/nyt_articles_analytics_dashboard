@@ -1,6 +1,6 @@
 variable "credentials" {
   description = "my credentials"
-  default     = "~/.gc/nyt_project.json"
+  default     = "~/nyt_project.json"
 }
 
 variable "project" {
