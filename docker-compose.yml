@@ -2,17 +2,17 @@ version: '3'
 services:
   magic:
     image: mageai/mageai:latest
-    command: mage start ${PROJECT_NAME}
+    command: mage start nyt-etl-pipeline
     env_file:
-      - .env
+      - ~/.env
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+      USER_CODE_PATH: /home/src/nyt-etl-pipeline
     ports:
       - 6789:6789
     volumes:
       - .:/home/src/
-      - ~/.gc/nyt_project.json:/home/src/personal-gcp.json
+      - ~/nyt_project.json:/home/src/personal-gcp.json
     restart: on-failure:5
