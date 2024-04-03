@@ -10,7 +10,7 @@ default:
       prod:
         type: bigquery
         method: service-account
-        project: nyt-data-analytics
+        project: "{{ env_var('PROJECT_ID') }}"
         schema: core
         threads: 1
         keyfile: ../../personal-gcp.json

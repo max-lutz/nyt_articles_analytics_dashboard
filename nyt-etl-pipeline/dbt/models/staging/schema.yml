@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: staging
-    database: nyt-data-analytics
+    database: "{{ env_var('PROJECT_ID') }}"
     schema: nyt_data
 
     tables:

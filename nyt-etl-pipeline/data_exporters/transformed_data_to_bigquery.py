@@ -3,6 +3,9 @@ from mage_ai.io.bigquery import BigQuery
 from mage_ai.io.config import ConfigFileLoader
 from pandas import DataFrame
 from os import path
+import os
+
+from dotenv import load_dotenv
 
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
@@ -16,7 +19,12 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
 
     Docs: https://docs.mage.ai/design/data-loading#bigquery
     """
-    table_id = 'nyt-data-analytics.nyt_data.nyt_data_raw'
+
+    dotenv_path = '/home/src/.env'
+    load_dotenv(dotenv_path)
+    project_id = os.environ.get('PROJECT_ID')
+
+    table_id = f'{project_id}.nyt_data.nyt_data_raw'
     config_path = path.join(get_repo_path(), 'io_config.yaml')
     config_profile = 'default'
 
