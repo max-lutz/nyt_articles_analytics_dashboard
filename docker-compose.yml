@@ -15,4 +15,5 @@ services:
     volumes:
       - .:/home/src/
       - ~/nyt_project.json:/home/src/personal-gcp.json
+      - ~/.env:/home/src/.env
     restart: on-failure:5
