@@ -159,6 +159,26 @@ Inside the VM
 
       Don't forget to press enter so the secret becomes ******* and is accepted
 
+      ![image](./images/mage_add_secret.png)
+
+   2. Go to nyt-etl-pipeline > Pipelines > nyt_api_to_gcs_and_bigquery > Triggers > run_once_a_month
+
+   3. Click on the button Run@Once
+
+   ![image](./images/run_at_once.png)
+
+
+5. Check that the data was loaded correctly
+
+   1. In [google cloud storage](https://console.cloud.google.com/storage)
+
+   ![image](./images/data_in_google_cloud_storage.png)
+
+   2. In [BigQuery](https://console.cloud.google.com/bigquery)
+
+   ![image](./images/data_in_bigquery.png)
+
+
 
 
 ## 4. Cleanup project
@@ -170,8 +190,9 @@ Inside the VM
    docker-compose down
    ```
 
-2. Deallocate terraform resources
+2. Deallocate terraform resources [enter yes]
    ```
+   cd ~/nyt_articles_analytics_dashboard/terraform
    terraform destroy
    ```
 
@@ -179,7 +200,7 @@ In the google cloud shell
 
 3. Stop the VM
    ```
-   gcloud compute instance stop --project=$PROJECT_ID --zone=$GOOGLE_CLOUD_ZONE instance-$PROJECT_ID
+   gcloud compute instances stop --project=$PROJECT_ID --zone=$GOOGLE_CLOUD_ZONE instance-$PROJECT_ID
    ```
 
 Finally
@@ -187,3 +208,7 @@ Finally
 4. Disable billing [here](https://console.cloud.google.com/billing/projects)
 
 5. Delete project [here](https://console.cloud.google.com/cloud-resource-manager?hl=en)
+
+
+
+### Congratulations you finished the demo of py data engineering project!!!
