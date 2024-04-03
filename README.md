@@ -22,18 +22,12 @@ https://developer.nytimes.com/docs/archive-product/1/overview
 
 
 ![diagram](./diagrams/infrastructure.png "Diagram")
-	
-	
-CI/CD:
-- implement CI/CD as if this project was always in production and we used CI/CD to add features to it.
-
 
 
 ## Results
 [Dashboard](https://lookerstudio.google.com/reporting/46e544c3-9e40-49d3-9da5-e9075f72631c)
 
-## Inspiration
-https://github.com/LoHertel/diplomats-in-germany/tree/main
+![Dashboard](./images/dashboard.png)
 
 
 ## Instructions:

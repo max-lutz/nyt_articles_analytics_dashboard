@@ -44,7 +44,7 @@ blocks:
   language: python
   name: transformed_data_to_bigquery
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
@@ -62,13 +62,13 @@ blocks:
   language: python
   name: transformed_data_to_gcs_partitioned
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
   - transform_api_data
   uuid: transformed_data_to_gcs_partitioned
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     dbt:
